@@ -1,5 +1,7 @@
 package com.company;
-
+/* program was used to download turnstile data using MTA's website's link source code saved as a text file.
+    program will parse out the urls from the html, then save the files to your local drive.
+*/
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
@@ -10,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        String csvFile = "turnstileurl.txt";
+        String inputFile = "turnstileurl.txt";
         BufferedReader br = null;
         String line = "";
         long rowCount = 0;
@@ -18,7 +20,7 @@ public class Main {
 
         String lineIn ="";
         try {
-            br = new BufferedReader(new FileReader(csvFile));
+            br = new BufferedReader(new FileReader(inputFile));
             while ((line = br.readLine()) != null) {
 
                 lineIn = line;
