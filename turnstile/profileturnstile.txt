@@ -16,8 +16,8 @@ splitData.take(1)(0)(6).split('/')(2).toInt
 Check if turnstile exits value can be parsed to int
 splitData.take(1)(0)(10).trim().toInt
 
-val outputData = splitData.map(v => v(0)+','+v(6).split('/')(0)+','+ v(6).split('/')(1)+','+v(6).split('/')(2)+','+v(7)+','+v(8)+','+v(10).trim() )
+val outputData = splitData.map(v => v(0)+','+v(6).split('/')(0)+','+ v(6).split('/')
+(1)+','+v(6).split('/')(2)+','+v(7)+','+v(8)+','+v(10).trim() )
 
-//find max value of exits
-val maxExits = outputData.map(line => line.split(',')(6))
-maxExits.max
+Check for max exits
+val maxExits = outputData.map(line => line.split(',')(6).toLong).max()
