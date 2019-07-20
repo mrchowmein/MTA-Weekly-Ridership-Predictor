@@ -1,8 +1,0 @@
-Station ID: Identifier for the weather station. String Datatype
-Station Name: Name of station. String Datatype
-Month: Month value as an Integer Datatype.
-Day: Date value as an Integer Datatype
-Year: Year value as an Integer Datatype
-Precipitation: the amount of rain as a Double value
-Temp Avg: average daily temperate as a double value
-Snow: the amount of snow in double value
