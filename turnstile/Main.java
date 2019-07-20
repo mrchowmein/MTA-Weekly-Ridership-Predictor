@@ -1,4 +1,4 @@
-package com.company;
+
 /* program was used to download turnstile data using MTA's website's link source code saved as a text file.
     program will parse out the urls from the html, then save the files to your local drive.
 */
