@@ -1,0 +1,7 @@
+Command to move turnstile data to HPC:
+ rsync -avz turnstile/ jwc516@dumbo.es.its.nyu.edu:/scratch/jwc516/turnstile/
+
+Command to move turnstile data to HDFS:
+hdfs dfs -mkdir /user/jwc516/turnstiledata
+hdfs dfs -put turnstile_190713.txt /user/jwc516/turnstiledata
+hdfs dfs -ls /user/jwc516/turnstiledata
