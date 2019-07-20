@@ -15,6 +15,6 @@ val filteredRDD = weatherData.filter(line=>line.contains("USW00014732"))
 
 val splitData = filteredRDD.map(line=> line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"))
 
-val outputData = splitData.map(v => v(0)+','+v(1)+','+v(5).split('-')(0)+','+ v(5).split('-')(1)+','+v(5).split('-')(2)+','+v(10)+','+v(11)+','+v(13) )
+val outputData = splitData.map(v => v(0).replaceAll("^\"|\"$", "")+','+v(5).split('-')(0).replaceAll("^\"|\"$", "")+','+ v(5).split('-')(1).replaceAll("^\"|\"$", "")+','+v(5).split('-')(2).replaceAll("^\"|\"$", "")+','+v(10).replaceAll("^\"|\"$", "")+','+v(11).replaceAll("^\"|\"$", "")+','+v(13).replaceAll("^\"|\"$", "") )
 
 outputData.saveAsTextFile("user/jwc516/etlweather")
