@@ -22,5 +22,18 @@ splitData.take(1)(0)(11).replaceAll("^\"|\"$", "").toDouble
 Check if avg temp value can be parsed to int
 splitData.take(1)(0)(13).replaceAll("^\"|\"$", "").toInt
 
+val outputData = splitData.map(v => v(0).replaceAll("^\"|\"$", "")+','+v(5).split('-')(0).replaceAll("^\"|\"$", "")+','+ v(5).split('-')(1).replaceAll("^\"|\"$", "")+','+v(5).split('-')(2).replaceAll("^\"|\"$", "")+','+v(10).replaceAll("^\"|\"$", "")+','+v(11).replaceAll("^\"|\"$", "")+','+v(13).replaceAll("^\"|\"$", "") )
+
+find max temp
+val maxTemp = outputData.map(line => line.split(',')(6).toInt).max()
+
+find max snow
+val maxSnow = outputData.map(line => line.split(',')(5).toDouble).max()
+
+find max precipitation
+val maxSnow = outputData.map(line => line.split(',')(4).toDouble).max()
+
+
+
 
 
