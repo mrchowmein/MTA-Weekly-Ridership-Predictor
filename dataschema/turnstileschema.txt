@@ -1,0 +1,7 @@
+Control Area: ID for the turnstile as String datatype
+Month: Month value as an Integer datatype
+Day: Day value as an Integer datatype
+Year: Year value as an Integer datatype
+Time: Time of day turnstile data was used (midnight or 1am) as a String datatype
+Desc: Type of audit, we are looking for regular audits only, not recovery or maintenance audits. String datatype
+Exits
