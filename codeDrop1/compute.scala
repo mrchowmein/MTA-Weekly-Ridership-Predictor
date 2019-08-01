@@ -17,7 +17,7 @@ val mappedStationTurnstiles = eltTurnstileSplit.map(line => line(0)).distinct
 val dateCountRDD = eltTurnstileSplit.map(v => (v(1), v(4)))
 
 
-val reducedDateCountRDD = dateCountRDD.map(t =>(t._1, t._2.toLong)).reduceByKey(_+_).sortByKey(true)
+val reducedDateCountRDD = dateCountRDD.map(t =>(t._1, t._2.toLong)).reduceByKey(_+_).sortByKey(false)
 
 
 val etlweather: String = "hdfs:///user/jwc516/etlweather/"
@@ -116,3 +116,31 @@ val faresWithWeather = weeklyFaresWeekNum.join(dailyWeatherAvgTup).sortByKey(tru
 val outputJoinedWeatherFares = faresWithWeather.map(t=> t._1+','+t._2._1+','+t._2._2._1+','+t._2._2._2+','+t._2._2._3+','+t._2._2._4)
 
 outputJoinedWeatherFares.saveAsTextFile("processedDataSet")
+
+val pData = sc.textFile("processedDataSet")
+
+/*
+create final dataset for ML
+*/
+//schema: year, weeknum, week total fares, avg wind, avg prec, avg snow, avg temp
+val remapped = pData.map(line=> line.split(',')).map(v=>v(0).split('w')(0)+','+v(0).split('w')(1)+','+v(1)+','+v(2)+','+v(3)+','+v(4)+','+v(5))
+
+remapped.coalesce(1,true).saveAsTextFile("finaldataset")
+
+
+/*
+determine what was wrong with turnstile
+*/
+
+val list: List[(Long)] = reducedDateCountRDD.map(t=>t._2).collect().toList
+val dateList: List[(String)] = reducedDateCountRDD.map(t=>t._1).collect().toList
+val justDate = reducedDateCountRDD.map(t=>t._1)
+
+val daily = (list zip list.drop(1)).map({ case (a, b) => a - b })
+val merged = dateList zip daily
+val mergedRDD = sc.parallelize(merged)
+val dailyAndCum = mergedRDD.join(reducedDateCountRDD)
+val outputBadDailys = dailyAndCum.map(t => t._1 +',' +t._2._1+','+t._2._2 )
+outputBadDailys.coalesce(1,true).saveAsTextFile("dailyandcumu")
+
+
