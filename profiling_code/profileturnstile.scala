@@ -1,4 +1,4 @@
-val turnStilePath: String = "hdfs:///user/jwc516/turnstiledata/turnstile_190713.txt"
+val turnStilePath: String = "hdfs:///user/jwc516/turnstile/turnstile_190713.txt"
 
 val turnStileData = sc.textFile(turnStilePath)
 
@@ -19,5 +19,6 @@ splitData.take(1)(0)(10).trim().toInt
 val outputData = splitData.map(v => v(0)+','+v(6).split('/')(0)+','+ v(6).split('/')
 (1)+','+v(6).split('/')(2)+','+v(7)+','+v(8)+','+v(10).trim() )
 
-Check for max exits
+//Check for max exits
 val maxExits = outputData.map(line => line.split(',')(6).toLong).max()
+
