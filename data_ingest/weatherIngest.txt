@@ -1,0 +1,6 @@
+
+Move files to Prince
+rsync -avz weather/ jwc516@dumbo.es.its.nyu.edu:/scratch/jwc516/weather/
+
+Move files to HDFS
+hdfs dfs -put /scratch/jwc516/weather
