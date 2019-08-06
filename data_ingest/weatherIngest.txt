@@ -1,2 +1,4 @@
+
+
 Move files to HDFS
 hdfs dfs -put /scratch/rag551/weather

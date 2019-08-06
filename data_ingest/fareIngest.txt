@@ -1,8 +1,4 @@
-Used Java program that scraped and downloaded MTA turnstile files.
 
-Command to move turnstile data to HPC:
- rsync -avz Fare/ jwc516@dumbo.es.its.nyu.edu:/scratch/jwc516/Fare/
 
 Command to move turnstile data to HDFS:
 hdfs dfs -put /scatch/jwc516/Fare
-hdfs dfs -ls /user/jwc516/Fare
