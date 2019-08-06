@@ -6,7 +6,7 @@ dateweek.csv is located: /scratch/jwc516/dateweek.csv
 In HDFS data is located in the following locations:
 hdfs:///user/jwc516/Fare
 hdfs:///user/jwc516/turnstile/
-hdfs:///user/jwc516/weather/
+hdfs:///user/rag551/weather/
 
 To run the program linux command line (not Spark-Shell):
 Please run the run.sh.
