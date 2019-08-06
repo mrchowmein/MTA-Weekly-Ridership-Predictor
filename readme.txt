@@ -7,6 +7,7 @@ In HDFS data is located in the following locations:
 hdfs:///user/jwc516/Fare
 hdfs:///user/jwc516/turnstile/
 hdfs:///user/rag551/weather/
+hdfs:///user/jwc516/dateweek.csv
 
 To run the program linux command line (not Spark-Shell):
 Please run the run.sh.
