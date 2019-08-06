@@ -1,6 +1,6 @@
 Fare data is located: /scratch/jwc516/Fare
 Turnstile data is located: /scratch/jwc516/turnstile
-Weather data is located: /scratch/jwc516/weather
+Weather data is located: /scratch/rag551/weather
 dateweek.csv is located: /scratch/jwc516/dateweek.csv
 
 In HDFS data is located in the following locations:
