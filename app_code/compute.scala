@@ -2,7 +2,7 @@
 Process turnstile data and merge with weather data. The output of this code was not used in our predictive model.
 */
 //read and process turnstile data
-val etlTurnstilePath: String = "hdfs:///user/jwc516/etlturnstile/"
+val etlTurnstilePath: String = "./etlturnstile/"
 val etlTurnStileRDD = sc.textFile(etlTurnstilePath)
 val fixedDateRange = etlTurnStileRDD.filter(line=>line.contains("2015/") || line.contains("2016/") || line.contains("2017/") || line.contains("2018/"))
 val eltTurnstileSplit = fixedDateRange.map(line => line.split(','))
@@ -10,7 +10,7 @@ val dateCountRDD = eltTurnstileSplit.map(v => (v(1), v(4)))
 val reducedDateCountRDD = dateCountRDD.map(t =>(t._1, t._2.toLong)).reduceByKey(_+_).sortByKey(false)
 
 //read and process weather data
-val etlweather: String = "hdfs:///user/rag551/etlweather/"
+val etlweather: String = "./etlweather/"
 val weatherOutput = sc.textFile(etlweather)
 val weatherMapped = weatherOutput.map(line=>line.split(','))
 val weatherTuple = weatherMapped.map(v=>(v(0).split('/')(2)+v(0).split('/')(0)+v(0).split('/')(1), (v(1), v(2), v(3), v(4))))
