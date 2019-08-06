@@ -1,14 +1,7 @@
-/*
-Move files to Prince
-rsync -avz 1803943.csv jwc516@dumbo.es.its.nyu.edu:/scratch/jwc516/weather/
 
-Move files to HDFS
-hdfs dfs -mkdir /user/jwc516/weather
-hdfs dfs -put /scratch/jwc516/weather/1803943.csv /user/jwc516/weather
-*/
 
 //Commands to ETL
-val weatherPath: String = "hdfs:///user/jwc516/weather"
+val weatherPath: String = "hdfs:///user/rag551/weather"
 
 val weatherData = sc.textFile(weatherPath)
 
