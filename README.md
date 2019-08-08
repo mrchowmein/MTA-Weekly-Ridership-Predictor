@@ -12,6 +12,7 @@ Please run the run.sh from commandline.
 The script will read in data from rag551 and jwc516's HDFS directories.  
 The script will delete any intermediary directories. 
 The script will then run the 3 scala files.
+Run time for the 3 spark files is about 7-8 mins.
 
  OR
  To run manually, run the scala files in the following order:  
