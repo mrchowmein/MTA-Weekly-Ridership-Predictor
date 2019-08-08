@@ -9,7 +9,7 @@ hdfs:///user/jwc516/turnstile/
 hdfs:///user/rag551/weather/
 hdfs:///user/jwc516/dateweek.csv
 
-**To run the program: 
+**To run the program: **
 1) To run the program linux command line (not Spark-Shell):
 Upload the following scala files into prince/linux: etlturnstile.scala, etlweather.scala, compute.scala and run.sh.
 Please run the run.sh from commandline.
