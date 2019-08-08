@@ -1,8 +1,7 @@
 # README
 
-
 ## To run the program:
-FYI: You will not need to upload any data as the scala scripits already points to our HDFS directories.
+FYI: You will not need to upload any data as the scala scripts already point to our HDFS directories.
 However, intermediary and final output will be saved into your relative HDFS directory.
 
 1) To run the program linux command line (not Spark-Shell):  
@@ -21,11 +20,11 @@ The script will read in data from rag551 and jwc516's HDFS directories.
 __Optional:__ intermediary directories will also be created if you are interested in other forms of data besides the final dataset. These directories are: etlturnstile, etlweather, dailyweatheravgforweek, weeklyfares, dailyandcumu, turnstileDailyRatio.
 
 3) Download and Rename this finaldataset to a .csv file. Then use this csv file for the KNIME workflow by following these steps:  
--You may need to add column headers to the csv file. the headers are from left to right: year,	week,	total fares,	wind,	prec,	snow,	temp  
+-You may need to add column headers to the csv file. the headers are from left to right: year,    week,    total fares,    wind,    prec,    snow,    temp  
 -double click on the File Reader in the workflow and add the finaldataset.csv file.  
 -press play or "execute all nodes"  
--gbtpredicted.csv out put will be created with the predicted values. 
--right click on the numeric scorer to view the model's performance  
+-gbtpredicted.csv will be created with the predicted values.  The test data used was 20% data partitioned from our finaldataset. More info below in the test_code directory description.
+-right-click on the numeric scorer to view the model's performance  
 
 4. Open the Tableau files to view the dashboards. Tableau used the following data files to create the visuals: gbtpredicted.csv, dailyandcumu, turnstileDailyRatio and finaldataset.csv.
 
