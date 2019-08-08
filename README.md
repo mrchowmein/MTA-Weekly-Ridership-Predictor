@@ -9,7 +9,7 @@ hdfs:///user/jwc516/turnstile/
 hdfs:///user/rag551/weather/
 hdfs:///user/jwc516/dateweek.csv
 
-**To run the program: **
+# __To run the program:__
 1) To run the program linux command line (not Spark-Shell):
 Upload the following scala files into prince/linux: etlturnstile.scala, etlweather.scala, compute.scala and run.sh.
 Please run the run.sh from commandline.
@@ -29,9 +29,13 @@ compute.scala
 -csv out put will be created with the predicted values
 -right click on the numeric scorer to view the model's performance
 
-Optional: intermediary 
+__Optional:__ intermediary directories will also be created if you are interested in other forms of data besides the final dataset. These directories are: etlturnstile, etlweather, dailyweatheravgforweek, weeklyfares, processedDataSet, dailyandcumu, turnstileDailyRatio.
 
 
-Description of Directories
+
+## Description of Submission (zip file) Directories
 data_injest: This directory contains all the programs and commands we used download and upload data into our hdfs directories.
-app_code: This directory contains our primary computation code (compute.scala) we used to process and create our final dataset after ETL. This directory also contains our KNIME workflow used to create our predictive model.
+app_code: This directory contains our primary computation code (compute.scala) we used to process and create our final dataset after ETL. This directory also contains our KNIME workflow used to create our predictive model. This directory also includes are Tableau files created with some intermediary datasets and predicted datasets. 
+profiling_code: This directory contains scala scripts used to profile our data.
+etl_code: This directory contains scripts used to ETL our turnstile and weather data.
+screenshots: This directory includes sample screen shots of our program running.
