@@ -89,13 +89,13 @@ weeklyFaresWeekNum.saveAsTextFile("weeklyfares")
 val dailyWeatherAvgTup = dailyWeatherAvg.map(line=>line.split(',')).map(line => (line(0),(line(1),line(2),line(3), line(4))))
 val faresWithWeather = weeklyFaresWeekNum.join(dailyWeatherAvgTup).sortByKey(true)
 val outputJoinedWeatherFares = faresWithWeather.map(t=> t._1+','+t._2._1+','+t._2._2._1+','+t._2._2._2+','+t._2._2._3+','+t._2._2._4)
-outputJoinedWeatherFares.saveAsTextFile("processedDataSet")
+//outputJoinedWeatherFares.saveAsTextFile("processedDataSet")
 
 
 /*
 create final dataset for ML
 */
-val pData = sc.textFile("processedDataSet")
+val pData = outputJoinedWeatherFares
 //schema: year, weeknum, week total fares, avg wind, avg prec, avg snow, avg temp
 val remapped = pData.map(line=> line.split(',')).map(v=>v(0).split('w')(0)+','+v(0).split('w')(1)+','+v(1)+','+v(2)+','+v(3)+','+v(4)+','+v(5))
 remapped.coalesce(1,true).saveAsTextFile("finaldataset")
