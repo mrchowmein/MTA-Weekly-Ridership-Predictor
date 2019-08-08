@@ -23,7 +23,9 @@ The script will then run the 3 scala files.
 
 __Optional:__ intermediary directories will also be created if you are interested in other forms of data besides the final dataset. These directories are: etlturnstile, etlweather, dailyweatheravgforweek, weeklyfares, dailyandcumu, turnstileDailyRatio.
 
-3) Download and Rename this finaldataset to a .csv file. Then use this csv file for the KNIME workflow by following these steps:  
+3) Save and Rename this finaldataset to a .csv file to your local computer.   
+4) Then use this csv file for the KNIME workflow by following these steps:  
+-Install KNIME.
 -You may need to add column headers to the csv file. the headers are from left to right: year,    week,    total fares,    wind,    prec,    snow,    temp  
 -double click on the File Reader in the workflow and add the finaldataset.csv file.  
 -press play or "execute all nodes"  
