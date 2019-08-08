@@ -1,4 +1,5 @@
-
+Move files to Prince
+via rsync or scp.
 
 Move files to HDFS
 hdfs dfs -put /scratch/rag551/weather
