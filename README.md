@@ -1,17 +1,5 @@
 # README
 
-## Data Locations:
-__In Scratch, the data is located in:__  
-Fare data is located: /scratch/jwc516/Fare  
-Turnstile data is located: /scratch/jwc516/turnstile  
-Weather data is located: /scratch/rag551/weather  
-dateweek.csv is located: /scratch/jwc516/dateweek.csv  
-
-__In HDFS data is located in the following locations:__   
-hdfs:///user/jwc516/Fare  
-hdfs:///user/jwc516/turnstile/  
-hdfs:///user/rag551/weather/  
-hdfs:///user/jwc516/dateweek.csv  
 
 ## To run the program:
 FYI: You will not need to upload any data as the scala scripits already points to our HDFS directories.
@@ -41,6 +29,18 @@ __Optional:__ intermediary directories will also be created if you are intereste
 
 4. Open the Tableau files to view the dashboards. Tableau used the following data files to create the visuals: gbtpredicted.csv, dailyandcumu, turnstileDailyRatio and finaldataset.csv.
 
+## Data Locations:
+__In Scratch, the data is located in:__  
+Fare data is located: /scratch/jwc516/Fare  
+Turnstile data is located: /scratch/jwc516/turnstile  
+Weather data is located: /scratch/rag551/weather  
+dateweek.csv is located: /scratch/jwc516/dateweek.csv  
+
+__In HDFS data is located in the following locations:__   
+hdfs:///user/jwc516/Fare  
+hdfs:///user/jwc516/turnstile/  
+hdfs:///user/rag551/weather/  
+hdfs:///user/jwc516/dateweek.csv  
 
 
 ## Description of Submission (zip file) Directories:
