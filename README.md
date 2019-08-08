@@ -1,42 +1,41 @@
-Fare data is located: /scratch/jwc516/Fare
+__In Scratch, the data is located in:__  
+Fare data is located: /scratch/jwc516/Fare  
+Turnstile data is located: /scratch/jwc516/turnstile  
+Weather data is located: /scratch/rag551/weather  
+dateweek.csv is located: /scratch/jwc516/dateweek.csv  
 
-Turnstile data is located: /scratch/jwc516/turnstile
+__In HDFS data is located in the following locations:__   
+hdfs:///user/jwc516/Fare  
+hdfs:///user/jwc516/turnstile/  
+hdfs:///user/rag551/weather/  
+hdfs:///user/jwc516/dateweek.csv  
 
-Weather data is located: /scratch/rag551/weather
- 
-dateweek.csv is located: /scratch/jwc516/dateweek.csv
+# To run the program:
+1) To run the program linux command line (not Spark-Shell):  
+Upload the following scala files into prince/linux: etlturnstile.scala, etlweather.scala, compute.scala and run.sh.  
+Please run the run.sh from commandline.  
+The script will read in data from rag551 and jwc516's HDFS directories.  
 
-In HDFS data is located in the following locations:
+ OR
+ To run manually, run the scala scripts in the following order:  
+ etlturnstile.scala  
+ etlweather.scala  
+ compute.scala  
 
-hdfs:///user/jwc516/Fare
+2) Final dataset will be saved in: hdfs:///user/nyuID/finaldataset/
 
-hdfs:///user/jwc516/turnstile/
+__Optional:__ intermediary directories will also be created if you are interested in other forms of data besides the final dataset. These directories are: etlturnstile, etlweather, dailyweatheravgforweek, weeklyfares, dailyandcumu, turnstileDailyRatio.
 
-hdfs:///user/rag551/weather/
+3) Download and Rename this finaldataset to a .csv file. Then use this csv file for the KNIME workflow by following these steps:  
+-You may need to add column headers to the csv file. the headers are from left to right: year,	week,	total fares,	wind,	prec,	snow,	temp  
+-double click on the File Reader in the workflow and add the finaldataset.csv file.  
+-press play or "execute all nodes"  
+-gbtpredicted.csv out put will be created with the predicted values. 
+-right click on the numeric scorer to view the model's performance  
 
-hdfs:///user/jwc516/dateweek.csv
+4. Tableau will used the following data files to create the visuals: gbtpredicted.csv, dailyandcumu, turnstileDailyRatio and finaldataset.csv.
 
-# __To run the program:__
-1) To run the program linux command line (not Spark-Shell):
-Upload the following scala files into prince/linux: etlturnstile.scala, etlweather.scala, compute.scala and run.sh.
-Please run the run.sh from commandline.
-The script will read in data from rag551 and jwc516's HDFS directories.
 
-OR
-To run manually, run the scala scripts in the following order:
-etlturnstile.scala
-etlweather.scala
-compute.scala
-
-2) Final dataset will be saved in: hdfs:///user/jwc516/finaldataset/
-
-3) Rename this finaldataset to a .csv file. Then use this csv file for the KNIME workflow by following these steps:
--double click on the File Reader in the workflow and add the finaldataset.csv file.
--press play or "execute all nodes"
--csv out put will be created with the predicted values
--right click on the numeric scorer to view the model's performance
-
-__Optional:__ intermediary directories will also be created if you are interested in other forms of data besides the final dataset. These directories are: etlturnstile, etlweather, dailyweatheravgforweek, weeklyfares, processedDataSet, dailyandcumu, turnstileDailyRatio.
 
 
 
