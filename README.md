@@ -1,6 +1,6 @@
 # README
 
-## Data Locations
+## Data Locations:
 __In Scratch, the data is located in:__  
 Fare data is located: /scratch/jwc516/Fare  
 Turnstile data is located: /scratch/jwc516/turnstile  
@@ -14,6 +14,9 @@ hdfs:///user/rag551/weather/
 hdfs:///user/jwc516/dateweek.csv  
 
 ## To run the program:
+FYI: You will not need to upload any data as the scala scripits already points to our HDFS directories.
+However, intermediary and final output will be saved into your relative HDFS directory.
+
 1) To run the program linux command line (not Spark-Shell):  
 Upload the following scala files into prince/linux: etlturnstile.scala, etlweather.scala, compute.scala and run.sh.  
 Please run the run.sh from commandline.  
@@ -40,12 +43,10 @@ __Optional:__ intermediary directories will also be created if you are intereste
 
 
 
-
-
-## Description of Submission (zip file) Directories
+## Description of Submission (zip file) Directories:
 -data_injest: This directory contains all the programs and commands we used download and upload data into our hdfs directories.  
 -app_code: This directory contains our primary computation code (compute.scala) we used to process and create our final dataset after ETL. This directory also contains our KNIME workflow used to create our predictive model. This directory also includes are Tableau files created with some intermediary datasets and predicted datasets.  
 -profiling_code: This directory contains scala scripts used to profile our data.  
 -etl_code: This directory contains scripts used to ETL our turnstile and weather data.  
 -screenshots: This directory includes sample screen shots of our program running.  
--test_code: This is the exact data used to test our train model. The test data was 20% data partitioned from our finaldataset. The seed for this partition is set in the KNIME workflow file.  
+-test_code: This is the exact data used to test AND evaluate our trained model. The test data was 20% data partitioned from our finaldataset. The seed for this partition is set in the KNIME workflow file. You will not need to input this data manually as the workflow takes care of it. 
