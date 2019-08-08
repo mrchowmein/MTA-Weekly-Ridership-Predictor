@@ -4,13 +4,17 @@
 FYI: You will not need to upload any data as the scala scripts already point to our HDFS directories.
 However, intermediary and final output will be saved into your relative HDFS directory.
 
-1) To run the program linux command line (not Spark-Shell):  
+The application includes the following: etlturnstile.scala, etlweather.scala, compute.scala, run.sh, mtadectree.knwf, Fares vs Weather.twbx, MTA Fares Prediction.twbx, Turnstile Bad Data?.twbx.
+
+1) Run from HPC's linux command line (not Spark-Shell) with script:  
 Upload the following scala files into prince/linux: etlturnstile.scala, etlweather.scala, compute.scala and run.sh.  
 Please run the run.sh from commandline.  
 The script will read in data from rag551 and jwc516's HDFS directories.  
+The script will delete any intermediary directories. 
+The script will then run the 3 scala files.
 
  OR
- To run manually, run the scala scripts in the following order:  
+ To run manually, run the scala files in the following order:  
  etlturnstile.scala  
  etlweather.scala  
  compute.scala  
