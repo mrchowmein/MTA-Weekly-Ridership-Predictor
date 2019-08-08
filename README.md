@@ -7,7 +7,7 @@ However, intermediary and final output will be saved into your relative HDFS dir
 The application includes the following: etlturnstile.scala, etlweather.scala, compute.scala, run.sh, mtadectree.knwf, Fares vs Weather.twbx, MTA Fares Prediction.twbx, Turnstile Bad Data?.twbx.
 
 1) Run from HPC's linux command line (not Spark-Shell) with script:  
-Upload the following scala files into prince/linux: etlturnstile.scala, etlweather.scala, compute.scala and run.sh.  
+Upload the following scala files into your user directory in prince/linux: etlturnstile.scala, etlweather.scala, compute.scala and run.sh.  
 Please run the run.sh from commandline.  
 The script will read in data from rag551 and jwc516's HDFS directories.  
 The script will delete any intermediary directories. 
