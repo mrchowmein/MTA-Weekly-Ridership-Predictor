@@ -1,4 +1,3 @@
-
-
-Command to move turnstile data to HDFS:
-hdfs dfs -put /scatch/jwc516/Fare
+1. Downloaded Fare files with Java program.
+2. Move files to Prince via rsync or scp.
+3. Command to move turnstile data to HDFS: hdfs dfs -put /scatch/jwc516/Fare
