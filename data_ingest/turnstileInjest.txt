@@ -1,5 +1,7 @@
 Used Java program that scraped and downloaded MTA turnstile files.
 
+Move local files to Prince
+via rsync or scp.
 
 Command to move turnstile data to HDFS:
 hdfs dfs -put /scratch/jwc516/turnstile 
