@@ -1,10 +1,9 @@
 /*
 Move files to Prince
-rsync -avz 1803943.csv jwc516@dumbo.es.its.nyu.edu:/scratch/jwc516/weather/
+rsync -avz weather/ rag551@dumbo.es.its.nyu.edu:/scratch/rag551/weather/
 
 Move files to HDFS
-hdfs dfs -mkdir /user/jwc516/weather
-hdfs dfs -put /scratch/jwc516/weather/1803943.csv /user/jwc516/weather
+hdfs dfs -put /scratch/rag551/weather/
 */
 
 //Commands to ETL
