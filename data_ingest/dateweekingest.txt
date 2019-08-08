@@ -1,0 +1,2 @@
+Use scp or rsync to move dateweek.csv
+Command to move dateweek data to HDFS: hdfs dfs -put dateweek.csv
