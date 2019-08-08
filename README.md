@@ -1,3 +1,4 @@
+## Data Locations
 __In Scratch, the data is located in:__  
 Fare data is located: /scratch/jwc516/Fare  
 Turnstile data is located: /scratch/jwc516/turnstile  
@@ -33,15 +34,16 @@ __Optional:__ intermediary directories will also be created if you are intereste
 -gbtpredicted.csv out put will be created with the predicted values. 
 -right click on the numeric scorer to view the model's performance  
 
-4. Tableau will used the following data files to create the visuals: gbtpredicted.csv, dailyandcumu, turnstileDailyRatio and finaldataset.csv.
+4. Open the Tableau files to view the dashboards. Tableau used the following data files to create the visuals: gbtpredicted.csv, dailyandcumu, turnstileDailyRatio and finaldataset.csv.
 
 
 
 
 
 ## Description of Submission (zip file) Directories
-data_injest: This directory contains all the programs and commands we used download and upload data into our hdfs directories.
-app_code: This directory contains our primary computation code (compute.scala) we used to process and create our final dataset after ETL. This directory also contains our KNIME workflow used to create our predictive model. This directory also includes are Tableau files created with some intermediary datasets and predicted datasets. 
-profiling_code: This directory contains scala scripts used to profile our data.
-etl_code: This directory contains scripts used to ETL our turnstile and weather data.
-screenshots: This directory includes sample screen shots of our program running.
+data_injest: This directory contains all the programs and commands we used download and upload data into our hdfs directories.  
+app_code: This directory contains our primary computation code (compute.scala) we used to process and create our final dataset after ETL. This directory also contains our KNIME workflow used to create our predictive model. This directory also includes are Tableau files created with some intermediary datasets and predicted datasets.  
+profiling_code: This directory contains scala scripts used to profile our data.  
+etl_code: This directory contains scripts used to ETL our turnstile and weather data.  
+screenshots: This directory includes sample screen shots of our program running.  
+test_code: This is the exact data used to test our train model. The test data was 20% data partitioned from our finaldataset. The seed for this partition is set in the KNIME workflow file.  
