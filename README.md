@@ -1,5 +1,8 @@
 # README
 
+## Overview
+The MTA Weekly Ridership Predictor attempts to predict weekly ridership with historical weather, fare, turnstile and calender data.
+
 ## To run the program:
 FYI: These instructions are only intended for NYU's HPC Spark Cluster. You will not need to upload any data as the scala scripts already point to our HDFS directories.
 However, intermediary and final output will be saved into your relative HDFS directory.
